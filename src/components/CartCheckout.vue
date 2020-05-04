@@ -1,11 +1,14 @@
 <template>
   <div class="checkout-box">
     <ul class="checkout-list">
-      <transition-group name="fade">
-      <li v-for="(product, index) in getProductsInCart" :key="index" class="checkout-product">
+      <transition-group name="slide">
+      <li :key="`${product.name} ${index}`"
+          class="checkout-product"
+          v-for="(product, index) in getProductsInCart"
+      >
         <img :src="product.image" alt="" class="product-image">
         <h3 class="product-name">{{ product.name }}</h3>
-        <span class="product-price">R$ {{ product.price }},00 </span>
+        <span class="product-price">$ {{ product.price }},00 </span>
         <button class="product-remove" @click="remove(index)">X</button>
       </li>
       </transition-group>
@@ -15,7 +18,7 @@
       <router-link to="./">Back to list of products</router-link>
     </div>
     <h3 class="total" v-if="hasProduct()">
-      Total: R$ {{ totalPrice() }}, 00
+      Total: $ {{ totalPrice() }}, 00
     </h3>
   </div>
 </template>

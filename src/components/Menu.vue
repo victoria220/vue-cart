@@ -2,15 +2,21 @@
   <header class="header">
     <nav class="nav">
       <ul class="nav-links">
-        <li class="link">
-          <router-link to="/">AllProducts</router-link>
-        </li>
-        <li class="link">
-          <router-link to="/smartphones">Smartphones</router-link>
-        </li>
-        <li class="link">
-          <router-link to="/notebooks">Notebooks</router-link>
-        </li>
+        <router-link to="/all" v-slot="{ href, navigate, isActive }">
+          <li class="link">
+              <a :href="href" :class="{'active-nav' : isActive}" @click="navigate">AllProducts</a>
+          </li>
+        </router-link>
+        <router-link to="/smartphones" v-slot="{ href, navigate, isActive }">
+          <li class="link">
+            <a :href="href" :class="{'active-nav' : isActive}" @click="navigate">Smartphones</a>
+          </li>
+        </router-link>
+        <router-link to="/notebooks" v-slot="{ href, navigate, isActive }">
+          <li class="link">
+            <a :href="href" @click="navigate" :class="{'active-nav' : isActive}">Notebooks</a>
+          </li>
+        </router-link>
       </ul>
     </nav>
     <slot></slot>
@@ -22,7 +28,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
   .header {
     width: 100%;
     height: 70px;
@@ -32,6 +38,10 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .active-nav {
+    color: #53AF61!important;
   }
 
   .nav {
@@ -52,5 +62,9 @@ export default {
   .link a {
     color: #fff;
     text-decoration: none;
+  }
+
+  a:active{
+    color: #e74c3c;
   }
 </style>

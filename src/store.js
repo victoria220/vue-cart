@@ -55,7 +55,6 @@ export default new Vuex.Store({
         details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
       },
     ],
-
     smartphones: [
       {
         name: 'Smartphone Xiaomi Mi A1 dual Android one 7.1',

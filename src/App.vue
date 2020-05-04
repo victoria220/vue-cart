@@ -9,13 +9,9 @@
            {{ getProductsInCart.length }}
         </span>
       </btn>
-      <transition name="appear">
         <popupcart class="cart" v-if="getPopupCart"/>
-      </transition>
     </mainMenu>
-    <transition name="leave">
       <router-view></router-view>
-    </transition>
     <maskBg v-if="getPopupCart" @click.native="showPopupCart()"/>
   </div>
 </template>

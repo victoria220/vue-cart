@@ -1,6 +1,6 @@
 <template>
   <div>
-    <transition name="fade">
+    <transition name="slide">
       <div class="modal" v-show="showModal">
         <h3>Details</h3>
         <slot></slot>
@@ -9,7 +9,7 @@
         </btn>
       </div>
     </transition>
-    <transition name="fade">
+    <transition name="slide">
       <maskBg v-show="showModal" @click="closeModal()"/>
     </transition>
   </div>
