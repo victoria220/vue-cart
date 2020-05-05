@@ -17,6 +17,11 @@
             <a :href="href" @click="navigate" :class="{'active-nav' : isActive}">Notebooks</a>
           </li>
         </router-link>
+        <router-link to="/pled" v-slot="{ href, navigate, isActive }">
+          <li class="link">
+            <a :href="href" @click="navigate" :class="{'active-nav' : isActive}">Pled</a>
+          </li>
+        </router-link>
       </ul>
     </nav>
     <slot></slot>
